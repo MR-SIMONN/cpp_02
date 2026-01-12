@@ -14,12 +14,19 @@
 
 int main( void )
 {
-Fixed a;
-Fixed b(a);
-Fixed c;
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
-return 0;
+	std::cout << "a is declared like this ---> Fixed a;\n\n";
+	Fixed a;
+	std::cout << "b is declared like this ---> Fixed b(a);\n\n";
+	Fixed b(a);
+	std::cout << "c is declared like this ---> Fixed c;\n\n";
+	Fixed c;
+	std::cout << "c is inisilised like this ---> c = b\n\n";
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << "\n";
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << "\n";
+	std::cout << c.getRawBits() << std::endl;
+	std::cout << "\n";
+	return 0;
 }

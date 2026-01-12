@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mihowk <mihowk@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:30:50 by mihowk            #+#    #+#             */
-/*   Updated: 2025/12/27 10:31:39 by mihowk           ###   ########.fr       */
+/*   Updated: 2026/01/12 11:00:23 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
     private:
-        int                 _fixedPointValue;
-        static const int    _fractionalBits = 8;
+        int                 fixedPointValue;
+        static const int    fractionalBits = 8;
 
     public:
         Fixed();

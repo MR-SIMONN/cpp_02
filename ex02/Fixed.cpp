@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mihowk <mihowk@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:30:39 by mihowk            #+#    #+#             */
-/*   Updated: 2025/12/27 10:35:10 by mihowk           ###   ########.fr       */
+/*   Updated: 2026/01/12 21:44:00 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _fixedPointValue(0) {}
+Fixed::Fixed() : fixedPointValue(0) {}
 
 Fixed::Fixed(const int value)
 {
-    this->_fixedPointValue = value << _fractionalBits;
+    this->fixedPointValue = value << fractionalBits;
 }
 
 Fixed::Fixed(const float value)
 {
-    this->_fixedPointValue = roundf(value * (1 << _fractionalBits));
+    this->fixedPointValue = roundf(value * (1 << fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -33,7 +33,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 {
     if (this != &other)
     {
-        this->_fixedPointValue = other.getRawBits();
+        this->fixedPointValue = other.getRawBits();
     }
     return *this;
 }
@@ -42,22 +42,22 @@ Fixed::~Fixed() {}
 
 int Fixed::getRawBits(void) const
 {
-    return this->_fixedPointValue;
+    return this->fixedPointValue;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    this->_fixedPointValue = raw;
+    this->fixedPointValue = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-    return (float)this->_fixedPointValue / (1 << _fractionalBits);
+    return (float)this->fixedPointValue / (1 << fractionalBits);
 }
 
 int Fixed::toInt(void) const
 {
-    return this->_fixedPointValue >> _fractionalBits;
+    return this->fixedPointValue >> fractionalBits;
 }
 
 bool Fixed::operator>(const Fixed& other) const
@@ -112,27 +112,27 @@ Fixed Fixed::operator/(const Fixed& other) const
 
 Fixed& Fixed::operator++()
 {
-    this->_fixedPointValue++;
+    this->fixedPointValue++;
     return *this;
 }
 
 Fixed Fixed::operator++(int)
 {
     Fixed temp(*this);
-    this->_fixedPointValue++;
+    this->fixedPointValue++;
     return temp;
 }
 
 Fixed& Fixed::operator--()
 {
-    this->_fixedPointValue--;
+    this->fixedPointValue--;
     return *this;
 }
 
 Fixed Fixed::operator--(int)
 {
     Fixed temp(*this);
-    this->_fixedPointValue--;
+    this->fixedPointValue--;
     return temp;
 }
 
