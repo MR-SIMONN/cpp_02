@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 10:14:31 by mihowk            #+#    #+#             */
-/*   Updated: 2026/01/13 19:08:17 by moel-hai         ###   ########.fr       */
+/*   Created: 2026/01/14 13:58:18 by moel-hai          #+#    #+#             */
+/*   Updated: 2026/01/14 14:08:39 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-    return ((float)fixedPointValue / (1 << fractionalBits));
+    return (fixedPointValue / 256.0f);
 }
 
 int Fixed::toInt(void) const
