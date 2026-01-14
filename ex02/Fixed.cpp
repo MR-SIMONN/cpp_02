@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:30:39 by mihowk            #+#    #+#             */
-/*   Updated: 2026/01/12 21:44:00 by moel-hai         ###   ########.fr       */
+/*   Updated: 2026/01/13 22:02:24 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ Fixed::Fixed(const Fixed& other)
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    if (this != &other)
-    {
-        this->fixedPointValue = other.getRawBits();
-    }
+    this->fixedPointValue = other.getRawBits();
     return *this;
 }
 
