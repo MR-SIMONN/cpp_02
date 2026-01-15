@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:58:55 by moel-hai          #+#    #+#             */
-/*   Updated: 2026/01/14 17:29:39 by moel-hai         ###   ########.fr       */
+/*   Updated: 2026/01/15 22:00:04 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main( void )
 {
     Fixed a;
     Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
     std::cout << a << std::endl;
     std::cout << ++a << std::endl;
     std::cout << a << std::endl;
