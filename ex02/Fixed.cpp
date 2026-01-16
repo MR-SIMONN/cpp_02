@@ -6,22 +6,22 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:58:43 by moel-hai          #+#    #+#             */
-/*   Updated: 2026/01/15 21:15:19 by moel-hai         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:23:38 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : fixedPointValue(0) {}
+Fixed::Fixed() : fixedValue(0) {}
 
 Fixed::Fixed(const int value)
 {
-    fixedPointValue = value << fractionalBits;
+    fixedValue = value << fractionalBits;
 }
 
 Fixed::Fixed(const float value)
 {
-    fixedPointValue = roundf(value * 256);
+    fixedValue = roundf(value * 256);
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -31,7 +31,7 @@ Fixed::Fixed(const Fixed& other)
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    fixedPointValue = other.getRawBits();
+    fixedValue = other.getRawBits();
     return (*this);
 }
 
@@ -39,22 +39,22 @@ Fixed::~Fixed() {}
 
 int Fixed::getRawBits(void) const
 {
-    return (fixedPointValue);
+    return (fixedValue);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    fixedPointValue = raw;
+    fixedValue = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-    return (fixedPointValue / 256.0f);
+    return (fixedValue / 256.0f);
 }
 
 int Fixed::toInt(void) const
 {
-    return (fixedPointValue >> fractionalBits);
+    return (fixedValue >> fractionalBits);
 }
 
 bool Fixed::operator>(const Fixed& other) const
@@ -109,27 +109,27 @@ Fixed Fixed::operator/(const Fixed& other) const
 
 Fixed& Fixed::operator++()
 {
-    fixedPointValue++;
+    fixedValue++;
     return (*this);
 }
 
 Fixed Fixed::operator++(int)
 {
     Fixed temp(*this);
-    fixedPointValue++;
+    fixedValue++;
     return (temp);
 }
 
 Fixed& Fixed::operator--()
 {
-    fixedPointValue--;
+    fixedValue--;
     return *this;
 }
 
 Fixed Fixed::operator--(int)
 {
     Fixed temp(*this);
-    fixedPointValue--;
+    fixedValue--;
     return temp;
 }
 

@@ -8,14 +8,15 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS = $(SRCS:%.cpp=%.o)
 
+DEPS = Fixed.hpp
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $^ $(CXXFLAGS) -o $@
+	$(CXX) $^  -o $@
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+%.o: %.cpp $(DEPS)
+	$(CXX)  -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)

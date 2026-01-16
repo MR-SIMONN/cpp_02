@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:58:28 by moel-hai          #+#    #+#             */
-/*   Updated: 2026/01/14 15:24:06 by moel-hai         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:23:38 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed
 {
     private:
-        int                 fixedPointValue;
+        int                 fixedValue;
         static const int    fractionalBits = 8;
 
     public:
