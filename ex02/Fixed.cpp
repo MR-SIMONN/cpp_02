@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:58:43 by moel-hai          #+#    #+#             */
-/*   Updated: 2026/01/16 22:23:38 by moel-hai         ###   ########.fr       */
+/*   Updated: 2026/01/17 02:57:20 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(const Fixed& other)
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    fixedValue = other.getRawBits();
+    setRawBits(other.getRawBits());
     return (*this);
 }
 
@@ -49,12 +49,12 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-    return (fixedValue / 256.0f);
+    return (getRawBits() / 256.0f);
 }
 
 int Fixed::toInt(void) const
 {
-    return (fixedValue >> fractionalBits);
+    return (getRawBits() >> fractionalBits);
 }
 
 bool Fixed::operator>(const Fixed& other) const

@@ -13,10 +13,10 @@ DEPS = Fixed.hpp
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $^  -o $@
+	$(CXX) $^ $(CXXFLAGS) -o $@
 
 %.o: %.cpp $(DEPS)
-	$(CXX)  -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)
